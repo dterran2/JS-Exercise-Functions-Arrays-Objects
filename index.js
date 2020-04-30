@@ -103,8 +103,13 @@ function temperatureInF(temperature, unit) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(id, name, email) {
-  let person = {id:"5", name:'Leia', email:'leia@leia.com'};
+function makePersonObject(value1, value2, value3) {
+  let person = {
+    id: value1, 
+    name: value2, 
+    email: value3};
+  return person;
+  
 }
 
 /**
@@ -120,8 +125,9 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(person) {
+    
+  return `Hello, my name is ${person.name}.`
 }
 
 
@@ -140,8 +146,9 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(fruit) {
+  
+  return 'apple'
 }
 
 /**
@@ -248,7 +255,7 @@ function getLastCarInfo(/* code here */) {
 function getModelYears(/* code here */) {
   /* code here */
 }
-
+//-------------------------------------------------------------------------------------------------------------------------
 /**
  * ### Challenge `getCarInfoById`
  *  * * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
