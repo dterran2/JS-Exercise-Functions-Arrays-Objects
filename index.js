@@ -76,9 +76,15 @@ return Math.round(t*9/5 + 32);
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
-}
+function temperatureInF(temperature, unit) {
+  if(unit === 'C'){
+    var newTemp = (Math.round((temperature*9)/5 + 32));
+    return newTemp + 'F';
+
+  }else{
+    return temperature + unit;}
+  
+  }
 
 
 /**
@@ -97,8 +103,8 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+  let person = {id:"5", name:'Leia', email:'leia@leia.com'};
 }
 
 /**
