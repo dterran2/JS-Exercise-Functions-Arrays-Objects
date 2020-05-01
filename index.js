@@ -56,7 +56,7 @@ function sayGoodbye(name) {
 */
 function temperatureCtoF(t) {
   /* code here */
-return Math.round(t*9/5 + 32);
+  return Math.round(t * 9 / 5 + 32);
 }
 
 /**
@@ -77,14 +77,15 @@ return Math.round(t*9/5 + 32);
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
 function temperatureInF(temperature, unit) {
-  if(unit === 'C'){
-    var newTemp = (Math.round((temperature*9)/5 + 32));
+  if (unit === 'C') {
+    var newTemp = (Math.round((temperature * 9) / 5 + 32));
     return newTemp + 'F';
 
-  }else{
-    return temperature + unit;}
-  
+  } else {
+    return temperature + unit;
   }
+
+}
 
 
 /**
@@ -105,11 +106,12 @@ function temperatureInF(temperature, unit) {
 */
 function makePersonObject(value1, value2, value3) {
   let person = {
-    id: value1, 
-    name: value2, 
-    email: value3};
+    id: value1,
+    name: value2,
+    email: value3
+  };
   return person;
-  
+
 }
 
 /**
@@ -126,7 +128,7 @@ function makePersonObject(value1, value2, value3) {
  * the returned value should look like `Hello, my name is Leia`.
 */
 function getName(person) {
-    
+
   return `Hello, my name is ${person.name}.`
 }
 
@@ -147,10 +149,8 @@ function getName(person) {
  * the returned value should be: 2.
 */
 function appleIndex(fruit) {
-  
-  return 'apple'
+  return fruit.indexOf('apple');
 }
-
 /**
  * ### Challenge `isItAnApple`
  * 
@@ -166,8 +166,20 @@ function appleIndex(fruit) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(array) {
+  let newArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let fruit = array[i];
+    if (fruit === 'apple') {
+      fruit = true;
+      newArray.push(fruit);
+    } else {
+      fruit = false;
+      newArray.push(fruit);
+    }
+  }
+  return newArray;
 }
 
 
@@ -203,8 +215,8 @@ var inventory = [
   * NOTE: This example has been completed for you.
 **/
 function get3rdCar(inventory) {
-  const the3rd = inventory[2];
-  return `The is a ${the3rd.car_make} ${the3rd.car_model}`
+  // const the3rd = inventory[2];
+  // return `The is a ${the3rd.car_make} ${the3rd.car_model}`
 }
 
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -225,7 +237,8 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+let car = inventory[index]
+  return `This is a ${car.car_make} ${car.car_model}`;
 }
 
 /**
@@ -239,8 +252,9 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  let car = inventory[inventory.length - 1];
+  return `This is a ${car.car_make} ${car.car_model}`;
 }
 
 /**
@@ -252,8 +266,15 @@ function getLastCarInfo(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(array) {
+  let newArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let car = array[i];
+    newArray.push(car.car_year);
+    }
+  return newArray;
+  
 }
 //-------------------------------------------------------------------------------------------------------------------------
 /**
@@ -342,9 +363,9 @@ if (typeof exports !== 'undefined') {
   if (appleIndex) { module.exports.appleIndex = appleIndex }
 
   if (isItAnApple) { module.exports.isItAnApple = isItAnApple }
-  
 
-  
+
+
   if (carMaker) { module.exports.carMaker = carMaker }
   if (getCarInfoByIndex) { module.exports.getCarInfoByIndex = getCarInfoByIndex }
   if (getLastCarInfo) { module.exports.getLastCarInfo = getLastCarInfo }
@@ -353,5 +374,5 @@ if (typeof exports !== 'undefined') {
   if (getModelYears) { module.exports.getModelYears = getModelYears }
   if (getOlderCars) { module.exports.getOlderCars = getOlderCars }
   if (getGermanCars) { module.exports.getGermanCars = getGermanCars }
- 
+
 }
